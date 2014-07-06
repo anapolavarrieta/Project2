@@ -13,13 +13,21 @@
  	<form method = "POST" action= "P2.php">
 		<label> # of Words: </label>
 		<input type="text" name="words"/>
+		<br/> Choose how to separate words: 
+		<select name="separation">
+			<optgroup>
+				<option>Space </option>
+				<option> - </option>
+				<option> / </option>
+			</optgroup>
+		</select>
 		<br/>
 		<input type= "radio" name="number"/>
 		<label> Add a number </label>
 		<br/>
 		<input type= "radio" name="symbol"/>
 		<label> Add a symbol </label>
-		<br/>
+		<br/>	
 		<input type= "submit" value = "Generate Password"/>
 	</form>
 

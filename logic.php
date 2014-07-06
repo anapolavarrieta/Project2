@@ -17,13 +17,26 @@ $num_wds_dict = count ($words_array);
 $password =" ";	
 $num_wds_pass=4;
 $error=0;
+$sep=" ";
+$flag=0;
+
+if(isset($_POST["separation"])){
+	$sep= $_POST["separation"];
+}
 
 if(isset($_POST["words"]) && $_POST["words"] >0){
 	$num_wds_pass = $_POST["words"]; //Gives the number of words in the password by the user
 	//Generates the password
 	for ($i=0; $i < $num_wds_pass; $i++){
 		$rand = rand(0, $num_wds_dict);
-		$password = $password." ".$words_array[$rand];
+		// To avoid having first the character and then the word. 
+		if ($flag==0){
+			$password= $words_array[$rand];
+			$flag=1;
+		}
+		else{
+			$password = $password.$sep.$words_array[$rand];
+		}
 	}
 }
 else{
