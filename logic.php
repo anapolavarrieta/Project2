@@ -21,7 +21,12 @@ $sep=" ";
 $flag=0;
 
 if(isset($_POST["separation"])){
-	$sep= $_POST["separation"];
+	if ($_POST["separation"]=="Space"){
+		$sep= " ";
+	}
+	else{
+		$sep= $_POST["separation"];
+	}
 }
 
 if(isset($_POST["words"]) && $_POST["words"] >0){
@@ -29,10 +34,14 @@ if(isset($_POST["words"]) && $_POST["words"] >0){
 	//Generates the password
 	for ($i=0; $i < $num_wds_pass; $i++){
 		$rand = rand(0, $num_wds_dict);
-		// To avoid having first the character and then the word. 
-		if ($flag==0){
-			$password= $words_array[$rand];
+		if ($flag==0){ // To avoid having first the character and then the word. 
 			$flag=1;
+			if (isset($_POST["upper"])){
+				$password= ucfirst($words_array[$rand]);
+			}
+			else{
+				$password= $words_array[$rand];
+			}
 		}
 		else{
 			$password = $password.$sep.$words_array[$rand];

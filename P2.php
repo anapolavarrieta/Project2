@@ -27,7 +27,10 @@
 		<br/>
 		<input type= "radio" name="symbol"/>
 		<label> Add a symbol </label>
-		<br/>	
+		<br/>
+		<input type= "radio" name="upper"/>
+		<label> Upper case first letter of password </label>
+		<br/>
 		<input type= "submit" value = "Generate Password"/>
 	</form>
 
