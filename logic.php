@@ -14,15 +14,29 @@ while (!feof($dict)){
 fclose ($dict);
 
 $num_wds_dict = count ($words_array);
-$num_wds_pass = 4;
-$password =" ";
+$password =" ";	
+if (isset($_POST["words"])){
+	$num_wds_pass = $_POST["words"]; //Gives the number of words in the password by the user
+}
+else{
+	$num_wds_pass= 4;
+}
 
 //Generates the password
-for ($i=0; $i < 4; $i++){
+for ($i=0; $i < $num_wds_pass; $i++){
 	$rand = rand(0, $num_wds_dict);
 	$password = $password." ".$words_array[$rand];
 }
 
+//Adds a number at the end, if requested by user
+if(isset($_POST["number"])){
+	$rand= rand(0,100);
+	$password = $password.$rand;
+}
+
+if(isset($_POST["symbol"])){
+	$password = $password."@";
+}
 
 
 ?>
