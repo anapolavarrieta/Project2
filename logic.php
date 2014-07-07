@@ -1,5 +1,6 @@
 <?php
  
+ 
 $words_array= "";
 
 $dict= fopen ("dictionary.txt", "r");
