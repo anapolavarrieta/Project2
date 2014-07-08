@@ -1,0 +1,22 @@
+h1{
+	text-align:center;
+	font-weight:bold;
+	color:#3276B1;
+}
+
+div.col-md-4{
+	padding-left:25px;
+}
+
+div.jumbotron{
+	background-color:#9AD0F9;
+	font-weight:bold;
+	padding-top:10px;
+	padding-bottom:5px;
+	text-align:center;
+}
+
+input.btn.btn-primary{
+	margin-left:50%;
+	margin-top:5%;
+}
